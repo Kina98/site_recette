@@ -2,15 +2,15 @@
 CREATE DATABASE IF NOT EXISTS `partage_de_recettes`;
 USE `partage_de_recettes`;
 
--- Cration d la table recipes
+-- Création de la table recipes
 CREATE TABLE IF NOT EXISTS `recipes` (
     `recipe_id` int(11) NOT NULL AUTO_INCREMENT,
     `title` varchar(128) NOT NULL,
     `recipe` TEXT NOT NULL,
-    `author` varchar(155) NOT NULL,
+    `author` varchar(255) NOT NULL,
     `is_enabled` BOOLEAN NOT NULL,
-    PRIMARY KEY (`recipe_id`),
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    PRIMARY KEY (`recipe_id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Création de la table users
 CREATE TABLE IF NOT EXISTS `users` (
@@ -18,9 +18,9 @@ CREATE TABLE IF NOT EXISTS `users` (
     `full_name` varchar(64) NOT NULL,
     `email` varchar(255) NOT NULL,
     `password` varchar(255) NOT NULL,
-    `age` INT NOT NULL;
-    PRIMARY KEY (`user_id`),
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    `age` INT NOT NULL,
+    PRIMARY KEY (`user_id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 delete from `users`;
 insert into `users` (`age`, `email`, `full_name`, `password`, `user_id`) values (34, 'mickael.andrieu@exemple.com', 'Mickaël Andrieu', 'devine', 1);

@@ -29,9 +29,10 @@
 </head>
 <body>
     <ul>
-        <?php for ($lines = 0; $lines <=3; $lines++) : ?>
-            <li><?php echo $recipes[$lines]['title'] . ' (' . $recipes[$lines]['author'] . ')'; ?></li>
+        <?php for ($i = 0; $i <= 3; $i++) : ?>
+            <li><?php echo $recipes[$i]['title']. '  ' .'(' .$recipes[$i]['author']. ')'; ?></li>
         <?php endfor; ?>
+    </ul>
     </ul>
 </body>
 </html>
