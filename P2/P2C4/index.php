@@ -35,14 +35,11 @@
     <div class="container">
         <h1>Affichage des recettes</h1>
         <!-- Boucles sur les recettes -->
-        <?php foreach($recipes as $recipe) : ?>
-            <!-- si la clé existe et a pour valeur "vrai", on affiche -->
-            <?php if (array_key_exists('is_enabled', $recipe) && $recipe['is_enabled'] == true) : ?>
-                <article>
-                    <h3><?php echo $recipe['title']; ?></h3>
-                    <div><?php echo $recipe['recipe']; ?></div>
-                    <i><?php echo $recipe['author']; ?></i>
-                </article>
+        <?php foreach ($recipes as $recipe) : ?>
+            <?php if (array_key_exists('is_enabled', $recipe) && $recipe['is_enabled'] === true) : ?>
+                <h1><?php echo $recipe['title']; ?></h1>
+                <div><?php echo $recipe['recipe']; ?></div>
+                <i><?php echo $recipe['author']; ?></i>
             <?php endif; ?>
         <?php endforeach; ?>
     </div>
